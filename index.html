@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#090b0b" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer" />
+  <title>18:00 // CLOCK OUT</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="grain"></div><div id="vignette"></div><div id="alertWash"></div>
+  <section id="boot" class="panel show">
+    <div class="eyebrow">AFTER HOURS PROTOCOL</div>
+    <h1>CLOCK<br><i>OUT</i></h1>
+    <div class="rule"></div>
+    <p>It is almost 18:00. Your manager has one more “quick thing.” Reach the elevator without being seen.</p>
+    <div class="brief-grid">
+      <div><b>WASD</b><span>MOVE</span></div><div><b>SHIFT</b><span>CROUCH</span></div><div><b>Q / E</b><span>PEEK</span></div><div><b>SPACE</b><span>COVER</span></div>
+    </div>
+    <button id="startBtn">BEGIN ESCAPE <span>→</span></button>
+    <small>Headphones recommended · original browser prototype</small>
+  </section>
+  <header id="hud" class="hidden">
+    <div class="profile"><div class="avatar">N</div><div class="bars"><b>NAKSH // STAFF 048</b><i><span id="energy"></span></i><i class="stress"><span id="stress"></span></i></div></div>
+    <div class="objective"><small>PRIMARY OBJECTIVE</small><b>LEAVE WORK ON TIME</b><span id="subObjective">Reach the 8F elevator</span></div>
+    <div class="clock"><small>OFFICE TIME</small><b id="clock">17:52</b><span id="deadline">8 MINUTES LEFT</span></div>
+  </header>
+  <div id="status" class="hidden"><span class="dot"></span><b id="statusText">UNDETECTED</b><small id="exposureText">0% EXPOSURE</small></div>
+  <div id="prompt" class="hidden"><kbd>SPACE</kbd><span id="promptText">ENTER COVER</span></div>
+  <div id="radar" class="hidden"><canvas id="radarCanvas" width="180" height="180"></canvas><div class="radarLabel"><b id="radarPct">00%</b><span>EXPOSURE</span></div></div>
+  <div id="hint" class="hidden">Stay low behind cubicles. Yellow edges mark cover.</div>
+  <div id="mobile" class="hidden">
+    <div id="stick"><div id="knob"></div></div>
+    <div class="actions"><button data-action="cover">COVER</button><button data-action="crouch" class="big">CROUCH</button><button data-action="peek">PEEK</button></div>
+  </div>
+  <section id="caught" class="panel">
+    <div class="eyebrow danger">SUPERVISOR CONTACT</div><h2>PERFECT TIMING.</h2>
+    <blockquote>“Let’s go over the proposal.<br>Just five minutes.”</blockquote>
+    <div class="taskcard"><span>NEW TASK ASSIGNED</span><b>Review Q4 proposal · +57 min</b></div>
+    <p>Your clock has been rolled back. The office remembers.</p>
+    <button id="retryBtn">RETURN TO DESK</button>
+  </section>
+  <section id="win" class="panel">
+    <div class="eyebrow success">ELEVATOR SECURED</div><h2>YOU LEFT<br>ON TIME.</h2>
+    <div id="winTime" class="winTime">17:58</div><p>No follow-up. No “quick sync.” Your evening is yours.</p>
+    <button id="againBtn">ESCAPE AGAIN</button>
+  </section>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
