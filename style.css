@@ -16,3 +16,6 @@
 #statusText,#exposureText,.clock,.profile{color:#edf4f7}
 .actions button{background:#172033;border-color:#a8b8c8}.actions .big{background:#35496a}#stick{background:rgba(53,73,106,.42);border-color:#a8b8c8}#knob{background:#61799e;border-color:#edf4f7}
 @media(pointer:coarse),(max-width:760px){.brief-grid{grid-template-columns:repeat(3,1fr)}.brief-grid div{padding:9px 6px}.panel{padding:28px 24px}.panel h1{font-size:60px}.panel p{font-size:14px}.panel small{margin-top:10px}}
+/* final identity correction: security-console glass, no paper card */
+.panel{background:linear-gradient(145deg,rgba(17,24,37,.96),rgba(27,38,57,.94));color:#eef5f8;border:1px solid #647896;border-top:3px solid var(--safe)}
+.panel p{color:#bdc8d3}.panel h1 i{color:#93a9ff}.rule{background:#6fd7cb}.eyebrow{color:#83d9cf}.brief-grid{border:1px solid #62718a}.brief-grid div{border-color:#536178}.brief-grid b{color:#b7c6ff}.brief-grid span{color:#8f9bab}.panel button{background:#e8eff4;color:#111827}.panel button:hover,.panel button:focus-visible{background:#9eb0ff;color:#111827}.panel small{color:#7f8c9d}.danger{color:#ff7588}.success{color:#62d8ca}.taskcard{background:rgba(255,93,115,.08)}blockquote{border-color:#ff7588}
